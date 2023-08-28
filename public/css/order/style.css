@@ -1,0 +1,235 @@
+.container {
+  max-width: 1170px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 49px 0;
+  min-height: calc(100vh - 98px);
+}
+
+.arrow-back-wrapper {
+  margin-bottom: 60px;
+}
+
+.order-title {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 34.92px;
+  color: #121212;
+  margin-bottom: 60px;
+}
+
+.order-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 120px;
+}
+.order-info-wrapper .order-subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 17.46px;
+}
+.order-info-wrapper .order-inputs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 125px;
+  grid-row-gap: 46px;
+}
+.order-info-wrapper .order-inputs-wrapper .order-input-wrapper {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  grid-column-gap: 30px;
+}
+.order-info-wrapper .order-inputs-wrapper .order-input-wrapper label {
+  cursor: pointer;
+  font-size: 16px;
+}
+.order-info-wrapper .order-inputs-wrapper .order-input-wrapper input {
+  border: none;
+  border-bottom: 1px solid #7D7D7D;
+}
+.order-info-wrapper .order-inputs-wrapper .order-input-wrapper input::-moz-placeholder {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18.88px;
+}
+.order-info-wrapper .order-inputs-wrapper .order-input-wrapper input::placeholder {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18.88px;
+}
+.order-info-wrapper .order-inputs-wrapper .order-input-wrapper input.invalid {
+  background-color: #FF2400;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px black;
+}
+
+.delivery-data-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 120px;
+}
+.delivery-data-wrapper .delivery-subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 17.46px;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 36px;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper .delivery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper .delivery-item .delivery-head label {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 18.75px;
+  color: #514A7E;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper .delivery-item .delivery-head label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 14px;
+  width: 14px;
+  top: calc(50% - 7px);
+  left: 0;
+  border: 1px solid #514A7E;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper .delivery-item .delivery-head input[type=checkbox] {
+  display: none;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper .delivery-item .delivery-head input[type=checkbox]:checked + label::after {
+  background-color: #514A7E;
+}
+.delivery-data-wrapper .delivery-inputs-wrapper .delivery-item .delivery-body .delivery-desciption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.06px;
+  color: #7D7D7D;
+}
+
+.payment-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.payment-wrapper .payment-subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 17.46px;
+}
+.payment-wrapper .payment-inputs-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 36px;
+  margin-bottom: 120px;
+}
+.payment-wrapper .payment-inputs-wrapper .payment-item label {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 18.75px;
+  color: #514A7E;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.payment-wrapper .payment-inputs-wrapper .payment-item label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 14px;
+  width: 14px;
+  top: calc(50% - 7px);
+  left: 0;
+  border: 1px solid #514A7E;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.payment-wrapper .payment-inputs-wrapper .payment-item input[type=checkbox] {
+  display: none;
+}
+.payment-wrapper .payment-inputs-wrapper .payment-item input[type=checkbox]:checked + label::after {
+  background-color: #514A7E;
+}
+
+.makeAnOrder-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.makeAnOrder-button-wrapper .makeAnOrder-button {
+  height: 193px;
+  width: 193px;
+  border: 1px solid #514A7E;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23.44px;
+  background-color: #fff;
+  color: #514A7E;
+  transition: all 0.3s ease;
+}
+.makeAnOrder-button-wrapper .makeAnOrder-button.disabled {
+  opacity: 0.4;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+}
+.modal-background .modal-window-wrapper {
+  animation: 0.8s show ease;
+  position: absolute;
+  z-index: 9999;
+  top: calc(50vh - 250px);
+  left: calc(50vw - 400px);
+  height: 500px;
+  width: 800px;
+  background-color: whitesmoke;
+  box-shadow: 1x 1px 2px black;
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 27px;
+  color: #121212;
+}
+.modal-background .modal-window-wrapper .modal-title {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 34.92px;
+}
+.modal-background .modal-window-wrapper .modal-text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18.88px;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,198 @@
+.container {
+    max-width: 1170px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 49px 0;
+    min-height: calc(100vh - 98px);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 51px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    position: relative;
+
+    .welcome {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto;
+    
+        .welcome-block {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            transition: all .3s ease-in;
+    
+            .welcome-title-wrapper {
+                font-family: 'Roboto', sans-serif;
+                max-width: 537px;
+                font-weight: 300;
+                font-size: 38px;
+                line-height: 69.84px;
+                color: #121212;
+    
+                span {
+                    font-family: 'Bad Script', cursive;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 400;
+                    font-style: italic;
+                    font-size: 69.84px;
+                    color: #514A7E;
+                }
+            }
+    
+            .welcome-text {
+                font-family: 'Roboto', sans-serif;
+                color: #7D7D7D;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 18.88px;
+                max-width: 249px;
+            }
+        }
+    
+        .promo-image-block {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+    
+        .welcome-cataloglink-wrapper {
+            grid-column: 1/3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            a {
+                text-decoration: none;
+    
+                .welcome-cataloglink-link {
+                    height: 193px;
+                    width: 193px;
+                    text-decoration: none;
+                    border: 1px solid #514A7E;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #514A7E;
+                    font-weight: 500;
+                    position: relative;
+                    transition: all .3s ease-in;
+    
+                    &:hover {
+                        background-color: #514A7E;
+                        color: #FFFDF5;
+                    }
+                }
+            }
+     
+        }
+    }
+}
+
+.section-title {
+    color: #121212;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 34.94px;
+}
+
+.our-advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 94px;
+
+    .our-advantages-itemswrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        grid-row-gap: 98px;
+
+        .our-advantages-item {
+            font-weight: 300;
+            line-height: 16.52px;
+
+            &:nth-child(5) {
+                grid-column: 1/3;
+                display: flex;
+                justify-content: center;
+            }
+
+            &:nth-child(6) {
+                grid-column: 3/5;
+                display: flex;
+                justify-content: center;
+            }
+
+            .our-advantages-content {
+                max-width: 175px;
+            }
+        }
+
+    }
+}
+
+.arrow-top {
+    height: 72px;
+    width: 72px;
+    background-image: url('/images/service/arrowTop.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 94px;
+
+    .accordeon-head {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #7D7D7D;
+        cursor: pointer;
+        padding: 26px 0 17px;
+
+        p {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23.44px;      
+        }
+
+        .accordeon-head-icon {
+            transition: all .25s ease-in;
+        }
+
+    }
+
+    .active {
+
+        + .accordeon-body {
+            max-height: 200px;
+            padding: 40px 0 32px;
+        }
+
+        .accordeon-head-icon {
+            transform: rotate(40deg);
+        }
+    }
+
+    .accordeon-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: all .3s;
+        color: #7D7D7D;
+        font-size: 16px;
+        line-height: 18.88px;
+    }
+
+}

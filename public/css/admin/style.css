@@ -1,0 +1,409 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.admin-button {
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 1px 1px 1px black;
+  transition: all 0.3s ease-in-out;
+}
+.admin-button:hover {
+  background-color: lightgreen;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.admin-wrapper {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+.admin-wrapper .admin-title {
+  text-align: center;
+}
+.admin-wrapper .admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.admin-wrapper .admin-list .category-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid lightgray;
+  padding: 15px 25px;
+  border-radius: 15px;
+}
+.admin-wrapper .admin-list .category-wrapper .category-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.admin-wrapper .admin-list .category-wrapper .category-buttons-wrapper {
+  display: flex;
+  gap: 15px;
+}
+.admin-wrapper .admin-list .category-wrapper .category-buttons-wrapper .admin-button {
+  padding: 5px 20px;
+}
+.admin-wrapper .admin-list .category-wrapper .category-buttons-wrapper .admin-button:nth-child(1) {
+  background-color: orange;
+}
+.admin-wrapper .admin-list .category-wrapper .category-buttons-wrapper .admin-button:hover {
+  background-color: lightgreen;
+}
+
+.add-category-form,
+.edit-category-form {
+  align-self: center;
+  min-width: 600px;
+  padding: 45px 15px;
+  border: 4px solid lightgray;
+  border-radius: 8px;
+}
+.add-category-form .add-category-item,
+.add-category-form .edit-category-item,
+.edit-category-form .add-category-item,
+.edit-category-form .edit-category-item {
+  display: grid;
+  grid-template-columns: 70px auto;
+  justify-content: center;
+  gap: 45px;
+  align-items: center;
+}
+.add-category-form .add-category-item:not(:last-child),
+.add-category-form .edit-category-item:not(:last-child),
+.edit-category-form .add-category-item:not(:last-child),
+.edit-category-form .edit-category-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+.add-category-form .add-category-item label,
+.add-category-form .edit-category-item label,
+.edit-category-form .add-category-item label,
+.edit-category-form .edit-category-item label {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.add-category-form .add-category-item input[type=text],
+.add-category-form .edit-category-item input[type=text],
+.edit-category-form .add-category-item input[type=text],
+.edit-category-form .edit-category-item input[type=text] {
+  width: 300px;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+.add-category-form .add-category-item input[type=text]::-moz-placeholder, .add-category-form .edit-category-item input[type=text]::-moz-placeholder, .edit-category-form .add-category-item input[type=text]::-moz-placeholder, .edit-category-form .edit-category-item input[type=text]::-moz-placeholder {
+  text-align: center;
+}
+.add-category-form .add-category-item input[type=text]::placeholder,
+.add-category-form .edit-category-item input[type=text]::placeholder,
+.edit-category-form .add-category-item input[type=text]::placeholder,
+.edit-category-form .edit-category-item input[type=text]::placeholder {
+  text-align: center;
+}
+.add-category-form .add-category-item input[type=text]:active, .add-category-form .add-category-item input[type=text]:focus,
+.add-category-form .edit-category-item input[type=text]:active,
+.add-category-form .edit-category-item input[type=text]:focus,
+.edit-category-form .add-category-item input[type=text]:active,
+.edit-category-form .add-category-item input[type=text]:focus,
+.edit-category-form .edit-category-item input[type=text]:active,
+.edit-category-form .edit-category-item input[type=text]:focus {
+  box-shadow: 4px 4px 6px black;
+}
+.add-category-form .admin-button,
+.edit-category-form .admin-button {
+  padding: 10px 20px;
+}
+
+.back-step-link {
+  text-decoration: none;
+  color: lightgray;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.3rem;
+  position: relative;
+}
+.back-step-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  width: 0;
+  background-color: lightgray;
+  height: 2.3px;
+  transition: all 0.3s ease-in-out;
+}
+.back-step-link:hover::after {
+  content: "";
+  width: 100%;
+}
+
+.remove-button-form .remove-button {
+  background-color: rgb(201, 94, 94) !important;
+  color: white;
+}
+
+.admin-list .product-wrapper {
+  border: 3px solid lightgray;
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 130px;
+  align-items: center;
+  grid-gap: 15px;
+}
+.admin-list .product-wrapper .product-name {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.admin-list .product-wrapper .product-description {
+  border: 1px solid black;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: scroll;
+}
+.admin-list .product-wrapper .product-service {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin-list .product-wrapper .product-service .product-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.admin-list .product-wrapper .product-service .product-buttons-wrapper button {
+  padding: 5px 20px;
+}
+.admin-list .product-wrapper .product-service .product-buttons-wrapper button:nth-child(1) {
+  background-color: orange;
+}
+.admin-list .product-wrapper .product-service .product-buttons-wrapper button:nth-child(2) {
+  background-color: rgb(201, 94, 94);
+}
+
+.edit-product-form,
+.add-product-form {
+  align-self: center;
+  min-width: 800px;
+  padding: 45px 15px;
+  border: 4px solid lightgray;
+  border-radius: 8px;
+}
+.edit-product-form .edit-product-item,
+.edit-product-form .add-product-item,
+.add-product-form .edit-product-item,
+.add-product-form .add-product-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  justify-content: center;
+  gap: 45px;
+  align-items: center;
+}
+.edit-product-form .edit-product-item:not(:last-child),
+.edit-product-form .add-product-item:not(:last-child),
+.add-product-form .edit-product-item:not(:last-child),
+.add-product-form .add-product-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+.edit-product-form .edit-product-item label,
+.edit-product-form .add-product-item label,
+.add-product-form .edit-product-item label,
+.add-product-form .add-product-item label {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.edit-product-form .edit-product-item input[type=text],
+.edit-product-form .add-product-item input[type=text],
+.add-product-form .edit-product-item input[type=text],
+.add-product-form .add-product-item input[type=text] {
+  width: 300px;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+.edit-product-form .edit-product-item input[type=text]::-moz-placeholder, .edit-product-form .add-product-item input[type=text]::-moz-placeholder, .add-product-form .edit-product-item input[type=text]::-moz-placeholder, .add-product-form .add-product-item input[type=text]::-moz-placeholder {
+  text-align: center;
+}
+.edit-product-form .edit-product-item input[type=text]::placeholder,
+.edit-product-form .add-product-item input[type=text]::placeholder,
+.add-product-form .edit-product-item input[type=text]::placeholder,
+.add-product-form .add-product-item input[type=text]::placeholder {
+  text-align: center;
+}
+.edit-product-form .edit-product-item input[type=text]:active, .edit-product-form .edit-product-item input[type=text]:focus,
+.edit-product-form .add-product-item input[type=text]:active,
+.edit-product-form .add-product-item input[type=text]:focus,
+.add-product-form .edit-product-item input[type=text]:active,
+.add-product-form .edit-product-item input[type=text]:focus,
+.add-product-form .add-product-item input[type=text]:active,
+.add-product-form .add-product-item input[type=text]:focus {
+  box-shadow: 4px 4px 6px black;
+}
+.edit-product-form .edit-product-item .edit-product-description,
+.edit-product-form .add-product-item .edit-product-description,
+.add-product-form .edit-product-item .edit-product-description,
+.add-product-form .add-product-item .edit-product-description {
+  height: 300px;
+  padding: 15px;
+  text-indent: 25px;
+  text-align: justify;
+}
+
+.checkboxes-size-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  justify-items: center;
+  padding: 10px;
+}
+.checkboxes-size-wrapper .checkbox-item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.checkboxes-size-wrapper .checkbox-item-wrapper label {
+  cursor: pointer;
+  position: relative;
+}
+.checkboxes-size-wrapper .checkbox-item-wrapper label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  background-image: url("/images/service/CheckboxInactive.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  border: 2px solid black;
+  border-radius: 4px;
+  top: 0;
+  right: -40px;
+}
+.checkboxes-size-wrapper .checkbox-item-wrapper input[type=checkbox] {
+  display: none;
+}
+.checkboxes-size-wrapper .checkbox-item-wrapper input[type=checkbox]:checked + label::after {
+  background-image: url("/images/service/checkboxChecked.png");
+}
+
+.product-colors-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  justify-content: center;
+  grid-gap: 15px;
+}
+.product-colors-wrapper .product-color-item label {
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+}
+.product-colors-wrapper .product-color-item label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  background-image: url("/images/service/CheckboxInactive.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  border: 2px solid black;
+  border-radius: 4px;
+  top: 0;
+  right: -30px;
+}
+.product-colors-wrapper .product-color-item input[type=checkbox] {
+  display: none;
+}
+.product-colors-wrapper .product-color-item input[type=checkbox]:checked + label::after {
+  background-image: url("/images/service/checkboxChecked.png");
+}
+
+.products-img-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+  justify-items: center;
+  padding: 10px;
+}
+.products-img-wrapper .product-img-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.price-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  grid-column-gap: 30px;
+}
+.price-wrapper .price-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.price-wrapper .price-input-wrapper input[type=number],
+.price-wrapper .price-input-wrapper input[type=text] {
+  width: 200px;
+  text-align: center;
+}
+.price-wrapper .price-input-wrapper input[type=number]::-moz-placeholder, .price-wrapper .price-input-wrapper input[type=text]::-moz-placeholder {
+  text-align: center;
+}
+.price-wrapper .price-input-wrapper input[type=number]::placeholder,
+.price-wrapper .price-input-wrapper input[type=text]::placeholder {
+  text-align: center;
+}

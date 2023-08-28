@@ -1,0 +1,19 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/admin/AdminSortProducts.js": "/js/admin/AdminSortProducts.js",
+    "/js/BurgerMenu/BurgerMenu.js": "/js/BurgerMenu/BurgerMenu.js",
+    "/js/home/script.js": "/js/home/script.js",
+    "/js/catalog/script.js": "/js/catalog/script.js",
+    "/js/product/script.js": "/js/product/script.js",
+    "/js/cartWidget/script.js": "/js/cartWidget/script.js",
+    "/js/cart/script.js": "/js/cart/script.js",
+    "/js/order/script.js": "/js/order/script.js",
+    "/css/common/style.css": "/css/common/style.css",
+    "/css/admin/style.css": "/css/admin/style.css",
+    "/css/app.css": "/css/app.css",
+    "/css/home/style.css": "/css/home/style.css",
+    "/css/order/style.css": "/css/order/style.css",
+    "/css/cart/style.css": "/css/cart/style.css",
+    "/css/product/style.css": "/css/product/style.css",
+    "/css/catalog/style.css": "/css/catalog/style.css"
+}
