@@ -50,11 +50,11 @@ body {
   transition: all 0.3s ease-in;
 }
 .header .auth-wrapper .auth-link:hover {
-  color: #514A7E;
+  color: #514a7e;
 }
 .header .auth-wrapper .auth-info {
   font-size: 10px;
-  color: #7D7D7D;
+  color: #7d7d7d;
 }
 .header .header-container {
   display: flex;
@@ -75,8 +75,8 @@ body {
   bottom: -13px;
   right: -23px;
   padding: 7px 12px;
-  background-color: #514A7E;
-  color: #FFFDF5;
+  background-color: #514a7e;
+  color: #fffdf5;
   border-radius: 50%;
   font-size: 11px;
 }
@@ -110,7 +110,7 @@ body {
 }
 .header .nav {
   background-color: #121212;
-  color: #FFFDF5;
+  color: #fffdf5;
   position: absolute;
   top: 0;
   left: -278px;

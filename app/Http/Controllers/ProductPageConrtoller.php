@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductPageConrtoller extends Controller
 {
-    public function show($category, $id) {
-        
+    public function show($category, $id)
+    {
+
         $product = Product::find($id);
         $categories = Category::all();
 
@@ -24,22 +25,22 @@ class ProductPageConrtoller extends Controller
             $product->images->img_4,
         ];
 
-        $images = array_filter($images, function($item) {
+        $images = array_filter($images, function ($item) {
             return $item;
         });
 
         $reviews = $product->reviews->sortDesc()->toArray();
 
         if (count($reviews)) {
-            $reviews = array_map(function($review) {
-                
+            $reviews = array_map(function ($review) {
+
                 $description = [];
 
-                foreach($review as $key => $value) {
+                foreach ($review as $key => $value) {
 
                     if ($key === 'created_at') {
                         $timeStamp = strtotime($value);
-                        
+
                         $date = date("d.m.y H:i:s", $timeStamp);
 
                         $description[$key] = $date;
@@ -52,42 +53,42 @@ class ProductPageConrtoller extends Controller
                 $description['user'] = User::find($description['user_id'])->name;
 
                 return $description;
-
             }, $reviews);
         }
-        
+
         $ratingRemainder = null;
         if ($product->rating)  $ratingRemainder = $product->rating - floor($product->rating);
-        
+
         return view('product', compact('categories', 'category', 'product', 'images', 'reviews', 'ratingRemainder'));
     }
 
-    public function store($category, $id) {
+    public function store($category, $id)
+    {
 
         $data = request()->validate([
             'rating' => 'required',
             'detail' => 'required',
         ]);
 
-        $data = array_map(function($item) {
+        $data = array_map(function ($item) {
             return trim($item);
-        },$data);
+        }, $data);
 
         $currentProduct = Product::find($id);
         $reviewsCurrentCounter = $currentProduct->reviews->count();
         $ratingArr = $currentProduct->reviews->toArray();
-        $ratingSumCurrent = array_reduce($ratingArr, function($accum, $item) {
-           return $accum += $item['rating'];
-        },0);
+        $ratingSumCurrent = array_reduce($ratingArr, function ($accum, $item) {
+            return $accum += $item['rating'];
+        }, 0);
 
         if (is_null($currentProduct->rating)) {
             $currentProduct->update([
                 "rating" => +$data['rating'],
             ]);
         } else {
-           $currentProduct->update([
+            $currentProduct->update([
                 "rating" => round(($ratingSumCurrent + +$data['rating']) / ($reviewsCurrentCounter + 1), 2),
-           ]); 
+            ]);
         };
 
         $newReview = Review::create([

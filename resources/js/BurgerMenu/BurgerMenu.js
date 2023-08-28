@@ -6,7 +6,6 @@ class BurgerMenu {
     static init() {
         this.burgerMenu = document.querySelector(".burger-menu");
         this.navMenu = document.querySelector("nav");
-        // this.welcomeBlock = document.querySelector('.welcome-block');
         this.navMenuWidth = this.navMenu.offsetWidth;
 
         this.burgerMenu.addEventListener("click", () => {

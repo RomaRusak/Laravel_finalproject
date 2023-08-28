@@ -58,7 +58,7 @@
   gap: 20px;
   font-weight: 300;
   line-height: 16.52px;
-  color: #7D7D7D;
+  color: #7d7d7d;
 }
 .cart-products-wrapper .product-wrapper .product-description .product-buttons-wrapper {
   display: flex;
@@ -85,7 +85,7 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 23.6px;
-  color: #514A7E;
+  color: #514a7e;
 }
 .cart-products-wrapper .product-wrapper .product-description .product-delete-wrapper .product-delete-item {
   display: flex;
@@ -94,7 +94,7 @@
   cursor: pointer;
 }
 .cart-products-wrapper .product-wrapper .product-description .product-delete-wrapper .product-delete-item span {
-  color: #7D7D7D;
+  color: #7d7d7d;
   font-weight: 300;
   line-height: 16.52px;
 }
@@ -113,7 +113,7 @@
   font-weight: 400;
   font-size: 40px;
   line-height: 47.2px;
-  color: #514A7E;
+  color: #514a7e;
 }
 .cart-products-wrapper .product-counters-wrapper {
   display: flex;
@@ -130,10 +130,10 @@
   font-weight: 400;
   font-size: 40px;
   line-height: 47.2px;
-  color: #514A7E;
+  color: #514a7e;
 }
 .cart-products-wrapper .product-counters-wrapper .total-counter-wrapper .total-counter {
-  color: #7D7D7D;
+  color: #7d7d7d;
   font-weight: 300;
   font-size: 14px;
   line-height: 16.52px;
@@ -141,10 +141,10 @@
 .cart-products-wrapper .order-link {
   text-decoration: none;
   padding: 14px 44px;
-  background-color: #514A7E;
+  background-color: #514a7e;
   font-weight: 400;
   line-height: 16.41px;
-  color: #FFFDF5;
+  color: #fffdf5;
   cursor: pointer;
 }
 

@@ -1,7 +1,6 @@
 $reviewWidth: 450px;
 $sliderWidth: 900px;
 
-
 .container {
     max-width: 1170px;
     overflow: hidden;
@@ -10,7 +9,6 @@ $sliderWidth: 900px;
     min-height: calc(100vh - 98px);
 }
 
-
 .arrow-back-wrapper {
     display: flex;
     margin-bottom: 60px;
@@ -18,19 +16,18 @@ $sliderWidth: 900px;
     gap: 56px;
 
     .breadcrumbs-wrapper {
-    
         .breadcrumbs-list {
             list-style: none;
             display: flex;
             gap: 3px;
-            transition: all .3s ease;
-    
+            transition: all 0.3s ease;
+
             a {
-                color: #7D7D7D;
+                color: #7d7d7d;
                 text-decoration: none;
 
                 &:hover {
-                    color: #514A7E;
+                    color: #514a7e;
                 }
             }
         }
@@ -67,7 +64,7 @@ $sliderWidth: 900px;
             position: relative;
 
             img {
-                position: absolute;    
+                position: absolute;
                 height: 100%;
                 width: 100%;
                 top: 0;
@@ -79,7 +76,6 @@ $sliderWidth: 900px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-column-gap: 17px;
-
 
             .product-all-item {
                 width: 100%;
@@ -108,10 +104,10 @@ $sliderWidth: 900px;
 
         .addToCart-button {
             padding: 14px 50px;
-            background-color: #514A7E;
+            background-color: #514a7e;
             font-weight: 400;
             line-height: 16.41px;
-            color: #FFFDF5;
+            color: #fffdf5;
             cursor: pointer;
         }
 
@@ -132,63 +128,59 @@ $sliderWidth: 900px;
                 line-height: 23.44px;
             }
 
-           .colors-inputs-wrapper {
-            display: flex;
-            gap: 6px;
+            .colors-inputs-wrapper {
+                display: flex;
+                gap: 6px;
 
-            .color-checkbox-wrapper {
-                &.hidden {
-                    display: none;
-                }
-
-                .color_white::after {
-                    background-color: white;
-                }
-
-                .color_black::after {
-                    background-color: #000000;
-                }
-
-                .color_green::after {
-                    background-color: #1FA68E;
-                }
-
-                .color_pink::after {
-                    background-color: #DC39CC;
-                }
-
-                .color_yellow::after {
-                    background-color: #FFF385;
-                }
-
-                label {
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        height: 30px;
-                        width: 30px;
-                        border-radius: 50%;
-                        border: 1px solid black;
-                        cursor: pointer;
-                        box-sizing: border-box;
+                .color-checkbox-wrapper {
+                    &.hidden {
+                        display: none;
                     }
 
-                    
-                }
+                    .color_white::after {
+                        background-color: white;
+                    }
 
-                input[type="checkbox"] {
-                    display: none;
+                    .color_black::after {
+                        background-color: #000000;
+                    }
 
-                    &:checked {
+                    .color_green::after {
+                        background-color: #1fa68e;
+                    }
 
-                        +label::after {
-                            border: 4px solid #514A7E;
+                    .color_pink::after {
+                        background-color: #dc39cc;
+                    }
+
+                    .color_yellow::after {
+                        background-color: #fff385;
+                    }
+
+                    label {
+                        &::after {
+                            content: "";
+                            display: block;
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            border: 1px solid black;
+                            cursor: pointer;
+                            box-sizing: border-box;
+                        }
+                    }
+
+                    input[type="checkbox"] {
+                        display: none;
+
+                        &:checked {
+                            + label::after {
+                                border: 4px solid #514a7e;
+                            }
                         }
                     }
                 }
             }
-           }
         }
 
         .product-sizes {
@@ -212,51 +204,46 @@ $sliderWidth: 900px;
                     }
 
                     .s-size::after {
-                        background-image: url('/images/service/s_size_checkbox.svg');
+                        background-image: url("/images/service/s_size_checkbox.svg");
                     }
 
                     .m-size::after {
-                        background-image: url('/images/service/m_size_checkbox.svg');
+                        background-image: url("/images/service/m_size_checkbox.svg");
                     }
 
                     .l-size::after {
-                        background-image: url('/images/service/l_size_checkbox.svg');
+                        background-image: url("/images/service/l_size_checkbox.svg");
                     }
 
                     .xl-size::after {
-                        background-image: url('/images/service/xl_size_checkbox.svg');
+                        background-image: url("/images/service/xl_size_checkbox.svg");
                     }
 
                     label {
-
                         &::after {
                             content: "";
                             display: block;
                             height: 30px;
                             width: 30px;
-                            border: 1px solid #514A7E;
+                            border: 1px solid #514a7e;
                             cursor: pointer;
                             box-sizing: border-box;
-                            
+
                             background-position: center;
                             background-size: cover;
                             background-repeat: no-repeat;
                         }
-    
-                        
                     }
-    
+
                     input[type="checkbox"] {
                         display: none;
-    
+
                         &:checked {
-    
-                            +label::after {
-                                border: 4px solid #514A7E;
+                            + label::after {
+                                border: 4px solid #514a7e;
                             }
                         }
                     }
-
                 }
             }
         }
@@ -273,7 +260,7 @@ $sliderWidth: 900px;
             .product-depiction-content {
                 font-size: 16px;
                 line-height: 18.75px;
-                color: #7D7D7D;
+                color: #7d7d7d;
                 text-align: justify;
                 text-indent: 25px;
             }
@@ -300,16 +287,16 @@ $sliderWidth: 900px;
         .reviews-container {
             width: $sliderWidth;
             overflow: hidden;
-    
+
             .reviews-line {
                 display: flex;
                 position: relative;
-                transition: all .4s ease-in;
+                transition: all 0.4s ease-in;
                 right: 0;
                 gap: 15px;
-        
+
                 .review-wrapper {
-                    border:  1px solid #514A7E;
+                    border: 1px solid #514a7e;
                     padding: 35px 25px;
                     width: $reviewWidth;
                     font-size: 12px;
@@ -321,7 +308,7 @@ $sliderWidth: 900px;
                     }
 
                     .review-detail {
-                        color: #7D7D7D;
+                        color: #7d7d7d;
                         text-align: justify;
                         margin-bottom: 11px;
                     }
@@ -334,38 +321,33 @@ $sliderWidth: 900px;
                         font-weight: 400;
                         color: #121212;
 
-
                         .review-date {
-                            color: #514A7E;
+                            color: #514a7e;
                         }
                     }
                 }
             }
-    
         }
 
         .reviews-arrow-right {
             height: 92px;
             width: 92px;
-            background-image: url('/images/service/slider_arrow_right.svg');
+            background-image: url("/images/service/slider_arrow_right.svg");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             cursor: pointer;
         }
     }
-
-   
-
 }
 
 .add-review-wrapper {
     .add-review-button {
         padding: 14px 18px;
-        background-color: #514A7E;
+        background-color: #514a7e;
         font-weight: 400;
         line-height: 16.41px;
-        color: #FFFDF5;
+        color: #fffdf5;
         cursor: pointer;
     }
 }
@@ -376,11 +358,11 @@ $sliderWidth: 900px;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1050;
 
     .modal-window-wrapper {
-        animation: .8s show ease;
+        animation: 0.8s show ease;
         position: absolute;
         z-index: 9999;
         top: calc(50vh - 250px);
@@ -405,9 +387,8 @@ $sliderWidth: 900px;
                 display: flex;
 
                 .star-icon-wrapper {
-
                     img {
-                        height: 40px;    
+                        height: 40px;
                         width: 40px;
                         cursor: pointer;
                     }
@@ -430,15 +411,15 @@ $sliderWidth: 900px;
 
             .add-review-button {
                 padding: 14px 18px;
-                background-color: #514A7E;
+                background-color: #514a7e;
                 font-weight: 400;
                 line-height: 16.41px;
-                color: #FFFDF5;
+                color: #fffdf5;
                 cursor: pointer;
-                transition: all .3s ease-in;
+                transition: all 0.3s ease-in;
 
                 &.disabled {
-                    opacity: .4;
+                    opacity: 0.4;
                 }
             }
         }
@@ -446,6 +427,10 @@ $sliderWidth: 900px;
 }
 
 @keyframes show {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

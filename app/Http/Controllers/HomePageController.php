@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         $categories = Category::all();
 
         return view('homePage', compact('categories'));
     }
-
 }

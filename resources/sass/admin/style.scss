@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
     margin: 0;
@@ -10,8 +10,8 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 .container {
@@ -36,7 +36,7 @@ select {
     text-transform: uppercase;
     font-weight: 500;
     box-shadow: 1px 1px 1px black;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
         background-color: lightgreen;
@@ -62,7 +62,7 @@ select {
         display: flex;
         flex-direction: column;
         gap: 25px;
-        
+
         .category-wrapper {
             display: flex;
             align-items: center;
@@ -83,15 +83,14 @@ select {
 
                 .admin-button {
                     padding: 5px 20px;
-    
+
                     &:nth-child(1) {
                         background-color: orange;
                     }
-    
+
                     &:hover {
                         background-color: lightgreen;
                     }
-                    
                 }
             }
         }
@@ -160,7 +159,7 @@ select {
         width: 0;
         background-color: lightgray;
         height: 2.3px;
-        transition: all .3s ease-in-out
+        transition: all 0.3s ease-in-out;
     }
 
     &:hover::after {
@@ -270,7 +269,6 @@ select {
             &:focus {
                 box-shadow: 4px 4px 6px black;
             }
-
         }
 
         .edit-product-description {
@@ -279,7 +277,6 @@ select {
             text-indent: 25px;
             text-align: justify;
         }
-
     }
 }
 
@@ -302,13 +299,12 @@ select {
             cursor: pointer;
             position: relative;
 
-
             &::after {
                 content: "";
                 position: absolute;
                 display: block;
                 height: 100%;
-                background-image: url('/images/service/CheckboxInactive.png');
+                background-image: url("/images/service/CheckboxInactive.png");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -318,19 +314,16 @@ select {
                 top: 0;
                 right: -40px;
             }
-
         }
 
         input[type="checkbox"] {
             display: none;
 
             &:checked {
-                
-                +label::after {
-                    background-image: url('/images/service/checkboxChecked.png');
+                + label::after {
+                    background-image: url("/images/service/checkboxChecked.png");
                 }
             }
-
         }
     }
 }
@@ -342,19 +335,17 @@ select {
     grid-gap: 15px;
 
     .product-color-item {
-
         label {
             font-size: 14px;
             cursor: pointer;
             position: relative;
-
 
             &::after {
                 content: "";
                 position: absolute;
                 display: block;
                 height: 100%;
-                background-image: url('/images/service/CheckboxInactive.png');
+                background-image: url("/images/service/CheckboxInactive.png");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -364,19 +355,16 @@ select {
                 top: 0;
                 right: -30px;
             }
-
         }
 
         input[type="checkbox"] {
             display: none;
 
             &:checked {
-                
-                +label::after {
-                    background-image: url('/images/service/checkboxChecked.png');
+                + label::after {
+                    background-image: url("/images/service/checkboxChecked.png");
                 }
             }
-
         }
     }
 }
@@ -400,7 +388,6 @@ select {
 }
 
 .price-wrapper {
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
@@ -422,5 +409,4 @@ select {
             }
         }
     }
-
 }

@@ -29,7 +29,6 @@ var BurgerMenu = /*#__PURE__*/function () {
       var _this = this;
       this.burgerMenu = document.querySelector(".burger-menu");
       this.navMenu = document.querySelector("nav");
-      // this.welcomeBlock = document.querySelector('.welcome-block');
       this.navMenuWidth = this.navMenu.offsetWidth;
       this.burgerMenu.addEventListener("click", function () {
         _this.burgerMenu.classList.toggle("active");

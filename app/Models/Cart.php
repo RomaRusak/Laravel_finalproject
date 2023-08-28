@@ -10,8 +10,9 @@ class Cart extends Model
     use HasFactory;
     protected $table = 'carts';
     protected $guarded = false;
-    
-    protected function products() {
+
+    protected function products()
+    {
         return $this->belongsToMany(Product::class, 'cart_products', 'cart_id', 'product_id');
     }
 }

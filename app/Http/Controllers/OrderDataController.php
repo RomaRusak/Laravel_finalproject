@@ -10,16 +10,18 @@ use Illuminate\Support\Facades\Validator;
 
 class OrderDataController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categories = Category::all();
 
-        $userData = auth()->user() ? auth()->user()->toArray() : []; 
+        $userData = auth()->user() ? auth()->user()->toArray() : [];
 
         return view('order', compact('categories', 'userData'));
     }
 
-    public function store(Request $request) {
-       
+    public function store(Request $request)
+    {
+
         $validator = Validator::make($request->toArray(), [
             'name' => 'required|string|min:3',
             'email' => 'required|string',
@@ -31,12 +33,12 @@ class OrderDataController extends Controller
             'delivery' => 'required|string',
             'payment' => 'required|string',
         ]);
-        
+
         if ($validator->fails()) {
             $messages = $validator->messages()->toArray();
             return response()->json(['errors' => $messages]);
-        } 
-        
+        }
+
         $data = [
             'name' => $request['name'],
             'email' => $request['email'],
@@ -46,13 +48,13 @@ class OrderDataController extends Controller
             'apartment_number' => $request['apartment_number'],
             'phone_number' => $request['phone_number'],
             'delivery' => $request['delivery'],
-            'payment' =>$request['payment'],
-            
+            'payment' => $request['payment'],
+
         ];
 
-        $data = array_map(function($item) {
+        $data = array_map(function ($item) {
             return trim($item);
-        },$data);
+        }, $data);
 
         $cart_id = $request->cookie('cart_id');
 
@@ -80,10 +82,10 @@ class OrderDataController extends Controller
 
         CartCustomer::create([
             'cart_id' => $cart_id,
-            'customer_id'=> $newCustomer->id,
+            'customer_id' => $newCustomer->id,
         ]);
 
-        
+
 
         return response(['message' => 'Success'])->withCookie(cookie('cart_id', 'true', -1));
     }

@@ -8,24 +8,27 @@ use Illuminate\Http\Request;
 
 class CatalogPageConrtoller extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categoryTitle = 'весь ассортимент';
         $categories = Category::all();
-        
+
         return view('catalog', compact('categories', 'categoryTitle'));
     }
 
-    public function show($category, Request $request) {
-        
+    public function show($category, Request $request)
+    {
+
         $categoryTitle = Category::where('code', $category)->first()->name;
         $categories = Category::all();
 
         $currentCategory = Category::where('code', $category)->first();
-        
+
         return view('catalog', compact('categories', 'categoryTitle', 'currentCategory'));
     }
 
-    public function products(Request $request) { 
+    public function products(Request $request)
+    {
 
         if ($request->category === 'all') {
             $fullData = Product::all();
@@ -40,14 +43,13 @@ class CatalogPageConrtoller extends Controller
             $product->sizes->toArray();
             $product->colors->toArray();
             $product = $product->toArray();
-        
+
             return $product;
         });
-         
-        
+
+
         return response()->json([
             'products' => $fullData,
         ]);
-        
     }
 }
